@@ -1,0 +1,22 @@
+<h3>Listado!!</h3>
+
+<div *ngIf="nombreBorrado; else etiqueta">
+  <h3>Heroe borrado: <small class="text-danger">{{ nombreBorrado }}</small></h3>
+</div>
+<ng-template #etiqueta>
+  <h3>No ha borrado</h3>
+</ng-template>
+
+<button
+  *ngIf="nombres.length > 0"
+  (click)="borrar()"
+  class="btn btn-outline-danger">
+  Borrar
+</button>
+<ul class="mt-2 list-group">
+  <li
+  *ngFor="let name of nombres"
+  class="list-group-item">
+    {{ name }}
+  </li>
+</ul>
